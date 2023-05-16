@@ -16,6 +16,7 @@ sudo apt-get update
 sudo apt-get install elasticsearch -y
 
 # Remove default network configurations
+sudo sed -i 's/#node.name/node.name/' /etc/elasticsearch/elasticsearch.yml
 sudo sed -i '/network.host:/d' /etc/elasticsearch/elasticsearch.yml
 sudo sed -i '/discovery.seed_hosts:/d' /etc/elasticsearch/elasticsearch.yml
 sudo sed -i '/cluster.initial_master_nodes:/d' /etc/elasticsearch/elasticsearch.yml
